@@ -187,8 +187,14 @@ function Landing() {
 
   return (
     <main>
-        <ImageSlider/>
-        
+        {!isSmallScreen && (<ImageSlider/>)}
+        {isSmallScreen && (<img
+            src='images/img1.png'
+            style={{
+                width: windowWidth,
+                height: '550px'
+            }}
+        />)}
         <section 
             className={`absolute top-0 left-0 z-[0] flex flex-col flex-center items-center ${isSmallScreen ? 'pl-5 pr-5 pt-5' : 'pl-[80px] pr-[80px] pt-10'} w-[100%]`}>
             <div className="flex justify-between w-full">
@@ -330,7 +336,7 @@ function Landing() {
                     </div>)}
                 </div>
 
-                <div className={`xs:bottom-10 bottom-32 flex justify-center items-center w-[65%] ${isSmallScreen ? 'mt-[20px] mb-4' : 'mt-[40px]'}`}>
+                <div className={`xs:bottom-10 bottom-32 flex justify-center items-center w-[65%] ${isSmallScreen ? 'mt-[20px] mb-4' : 'mt-[120px]'}`}>
                     <div onClick={() => scrollToSection(about)}
                         className="flex justify-center items-center flex-col gap-2 cursor-pointer"
                     >

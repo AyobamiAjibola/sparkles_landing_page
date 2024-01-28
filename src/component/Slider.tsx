@@ -17,40 +17,32 @@ export default function ImageSlider() {
         <div>
             <Image 
                 src={images.img1}
-                style={{
-                    width: windowWidth,
-                    height: isSmallScreen ? "550px" : "918px"
-                }}
+                width={windowWidth}
+                height={918}
                 alt="Image" 
             />
         </div>
         <div>
             <Image 
                 src={images.img2}
-                style={{
-                    width: windowWidth,
-                    height: isSmallScreen ? "550px" : "918px"
-                }}
+                width={windowWidth}
+                height={918}
                 alt="Image" 
             />
         </div>
         <div>
             <Image
                 src={images.img3}
-                style={{
-                    width: windowWidth,
-                    height: isSmallScreen ? "550px" : "918px"
-                }}
+                width={windowWidth}
+                height={918}
                 alt="Image" 
             />
         </div>
         <div>
             <Image 
                 src={images.img4}
-                style={{
-                    width: windowWidth,
-                    height: isSmallScreen ? "550px" : "918px"
-                }}
+                width={windowWidth}
+                height={918}
                 alt="Image" 
             />
         </div>
