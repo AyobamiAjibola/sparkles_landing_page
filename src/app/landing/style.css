@@ -1,0 +1,46 @@
+.marquee-container {
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .marquee-content {
+    white-space: nowrap;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    animation: marquee 30s linear infinite;
+  }
+  
+  @keyframes marquee {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+
+  .mySwiper .swiper-button-prev,
+  .mySwiper .swiper-button-next {
+    background-color: white; 
+    color: #B39B77; 
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border-width: 0.8px;
+    border-color: #ECECED;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  .mySwiper .swiper-button-prev:hover,
+  .mySwiper .swiper-button-next:hover {
+    background-color: #dddddd; 
+    color: #B39B77;
+  }
+
+  .sectionImg {
+    background-image: url('../../../public/images/guy3.png');
+    /* object-fit: fill; */
+    /* object-position: center; */
+    background-repeat: no-repeat;
+  }

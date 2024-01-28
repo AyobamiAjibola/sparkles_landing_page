@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=InstrumentSans:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -16,18 +18,30 @@
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
+/* .main {
+  width: 100vw;
+  min-height: 100vh;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  padding: 120px 24px 160px 24px;
+  pointer-events: none;
+} */
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+.button {
+  @apply bg-[#B39B77] font-light text-center text-white rounded-xl
+}
+
+.button-secondary {
+  @apply bg-white font-light text-center text-[#B39B77]
+}
+
+.input {
+  @apply bg-white rounded-xl
 }
