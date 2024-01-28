@@ -165,10 +165,10 @@ function Landing() {
   ];
 
   const content5 = [
-    "images/img1.png",
-    "images/img2.png",
-    "images/img3.png",
-    "images/img4.png"
+    images.img1,
+    images.img2,
+    images.img3,
+    images.img4,
   ];
 
   useEffect(() => {
@@ -194,7 +194,7 @@ function Landing() {
         >
             {content5.map((image, index) => (
                 <div key={index}>
-                    <img 
+                    <Image 
                         src={image}
                         style={{
                             width: windowWidth,
