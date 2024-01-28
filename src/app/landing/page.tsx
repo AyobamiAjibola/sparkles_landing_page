@@ -20,6 +20,7 @@ import { Dialog } from "@mui/material";
 import { stateLga } from "@/constant/state";
 import Select from "react-select";
 import { customStyles } from "@/constant/customStyles";
+import ImageSlider from "@/component/Slider";
 
 const type = [
     {label: "Barber", value: "barber"},
@@ -186,25 +187,7 @@ function Landing() {
 
   return (
     <main>
-        {/* {isSmallScreen && (<ImageSlider/>)} */}
-
-        <Carousel 
-            autoplay
-            dots={false}
-        >
-            {content5.map((image, index) => (
-                <div key={index}>
-                    <Image 
-                        src={image}
-                        style={{
-                            width: windowWidth,
-                            height: isSmallScreen ? "550px" : "918px"
-                        }}
-                        alt="Image" 
-                    />
-                </div>
-            ))}
-        </Carousel>
+        <ImageSlider/>
         
         <section 
             className={`absolute top-0 left-0 z-[0] flex flex-col flex-center items-center ${isSmallScreen ? 'pl-5 pr-5 pt-5' : 'pl-[80px] pr-[80px] pt-10'} w-[100%]`}>

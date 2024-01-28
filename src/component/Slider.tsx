@@ -6,7 +6,7 @@ import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 
 export default function ImageSlider() {
-  const sliderWidth = typeof window !== 'undefined' ? window.innerWidth : 0;
+  const windowWidth = typeof window !== 'undefined' ? window.innerWidth : 0;
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
   return (
@@ -15,50 +15,44 @@ export default function ImageSlider() {
         dots={false}
     >
         <div>
-            <img 
-                src="images/img1.png" 
+            <Image 
+                src={images.img1}
                 style={{
-                    width: sliderWidth,
-                    height: "918px"
+                    width: windowWidth,
+                    height: isSmallScreen ? "550px" : "918px"
                 }}
                 alt="Image" 
             />
         </div>
         <div>
-            <img 
-                src="images/img2.png" 
+            <Image 
+                src={images.img2}
                 style={{
-                    width: sliderWidth,
-                    height: "918px"
+                    width: windowWidth,
+                    height: isSmallScreen ? "550px" : "918px"
                 }}
                 alt="Image" 
             />
         </div>
         <div>
-            <img 
-                src="images/img3.png" 
+            <Image
+                src={images.img3}
                 style={{
-                    width: sliderWidth,
-                    height: "918px"
+                    width: windowWidth,
+                    height: isSmallScreen ? "550px" : "918px"
                 }}
                 alt="Image" 
             />
         </div>
         <div>
-            <img 
-                src="images/img4.png" 
-                style={{
-                    width: sliderWidth,
-                    height: "918px"
-                }}
-                alt="Image" 
-            />
-            {/* <Image
+            <Image 
                 src={images.img4}
-                alt="image"
-                width={sliderWidth}
-                height={918}
-            /> */}
+                style={{
+                    width: windowWidth,
+                    height: isSmallScreen ? "550px" : "918px"
+                }}
+                alt="Image" 
+            />
         </div>
     </Carousel>
   )
