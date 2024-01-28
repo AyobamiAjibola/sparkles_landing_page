@@ -192,7 +192,7 @@ function Landing() {
             src='images/img1.png'
             style={{
                 width: windowWidth,
-                height: '550px'
+                height: '918px'
             }}
         />)}
         <section 
@@ -336,7 +336,7 @@ function Landing() {
                     </div>)}
                 </div>
 
-                <div className={`xs:bottom-10 bottom-32 flex justify-center items-center w-[65%] ${isSmallScreen ? 'mt-[20px] mb-4' : 'mt-[120px]'}`}>
+                <div className={`xs:bottom-10 bottom-32 flex justify-center items-center w-[65%] ${isSmallScreen ? 'mt-[20px] mb-4' : 'mt-[40px]'}`}>
                     <div onClick={() => scrollToSection(about)}
                         className="flex justify-center items-center flex-col gap-2 cursor-pointer"
                     >

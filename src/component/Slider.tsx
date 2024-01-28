@@ -17,15 +17,15 @@ export default function ImageSlider() {
         <div>
             <Image 
                 src={images.img1}
-                width={windowWidth}
                 height={918}
                 alt="Image" 
+                className='w-[100%]'
             />
         </div>
         <div>
             <Image 
                 src={images.img2}
-                width={windowWidth}
+                className='w-[100%]'
                 height={918}
                 alt="Image" 
             />
@@ -33,7 +33,7 @@ export default function ImageSlider() {
         <div>
             <Image
                 src={images.img3}
-                width={windowWidth}
+                className='w-[100%]'
                 height={918}
                 alt="Image" 
             />
@@ -41,7 +41,7 @@ export default function ImageSlider() {
         <div>
             <Image 
                 src={images.img4}
-                width={windowWidth}
+                className='w-[100%]'
                 height={918}
                 alt="Image" 
             />
