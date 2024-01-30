@@ -35,7 +35,7 @@
 }
 
 .button {
-  @apply bg-[#B39B77] font-light text-center text-white rounded-xl
+  @apply bg-[#B39B77] font-light text-center text-white rounded-[20px]
 }
 
 .button-secondary {
@@ -43,5 +43,5 @@
 }
 
 .input {
-  @apply bg-white rounded-xl
+  @apply bg-white rounded-[20px]
 }

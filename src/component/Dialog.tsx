@@ -4,7 +4,7 @@ import { CloseOutlined } from '@ant-design/icons';
 import icons from '@/constant/icons';
 import Image from 'next/image';
 
-const App = ({open, setOpen}: {open: boolean, setOpen: any}) => {
+const App = ({open, setOpen, clickValue}: {open: boolean, setOpen: any, clickValue: any}) => {
 
   const showDrawer = () => {
     setOpen(true);
@@ -50,7 +50,7 @@ const App = ({open, setOpen}: {open: boolean, setOpen: any}) => {
             <p className='text-sm text-white font-light'>Login/Signup</p>
           </div>
 
-          <button className='text-white text-xs bg-[#B39B77] w-[60%] h-[40px] rounded-full'>
+          <button className='text-white text-xs bg-[#B39B77] w-[60%] h-[40px] rounded-full' onClick={() => clickValue()}>
             For Business
           </button>
         </div>

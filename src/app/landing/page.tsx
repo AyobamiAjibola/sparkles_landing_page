@@ -23,16 +23,25 @@ import { customStyles } from "@/constant/customStyles";
 import ImageSlider from "@/component/Slider";
 
 const type = [
-    {label: "Barber", value: "barber"},
-    {label: "Hair Stylist", value: "hair stylist"},
-    {label: "Spa", value: "spa"}
+    {label: "Barber", value: "Barber"},
+    {label: "Nail Technician", value: "Nail Technician"},
+    {label: "Spa", value: "Spa"},
+    {label: "Brows & Lashes", value: "Brows & Lashes"},
+    {label: "Massage", value: "Massage"},
+    {label: "Hair stylist", value: "Hair stylist"},
+    {label: "Tooth whitening", value: "Tooth whitening"},
+    {label: "House Cleaning", value: "House Cleaning"},
+    {label: "Hotel", value: "Hotel"},
+    {label: "Car Rental", value: "Car Rental"},
+    {label: "Fitness", value: "Fitness"},
+    {label: "Pet Services", value: "Pet Services"}
 ];
 
 const modeOfOperation = [
-    {label: "Operation", value: "mode"},
-    {label: "Operation", value: "mode"},
-    {label: "Operation", value: "mode"}
-]
+    {label: "Mobile", value: "Mobile"},
+    {label: "Shop (Walk in Centers)", value: "Shop (Walk in Centers)"},
+    {label: "Both", value: "Both"}
+];
 
 function Landing() {
   const [show, setShow] = useState(false);
@@ -172,6 +181,11 @@ function Landing() {
     images.img4,
   ];
 
+  const scrollTo = () => {
+    scrollToSection(getStarted)
+    setOpen(false)
+  }
+
   useEffect(() => {
     let stateArray: any = [];
     const newData = Object.entries(stateLga);
@@ -192,7 +206,7 @@ function Landing() {
             src='images/img1.png'
             style={{
                 width: windowWidth,
-                height: '918px'
+                height: '570px'
             }}
         />)}
         <section 
@@ -217,8 +231,8 @@ function Landing() {
                         width={32}
                         height={32}
                     />
-                    <p className="text-xs text-white font-normal ml-2 hover:text-[#B39B77] cursor-pointer hover:font-bold">Login/Signup</p>
-                    <button className="button ml-4 pl-3 pr-3 text-xs h-7 hover:bg-white hover:text-[#B39B77]">
+                    <p className="text-sm text-white font-normal ml-2 hover:text-[#B39B77] cursor-pointer hover:font-bold">Login/Signup</p>
+                    <button onClick={() => scrollToSection(getStarted)} className="button ml-4 pl-12 pr-12 text-sm h-[45px] hover:bg-white hover:text-[#B39B77]">
                         For Business
                     </button>
                 </div>)}
@@ -236,17 +250,18 @@ function Landing() {
                 <MenuDialog
                     open={open}
                     setOpen={setOpen}
+                    clickValue={scrollTo}
                 />
             </div>
             <div className={`flex flex-col justify-center items-center ${isSmallScreen ? 'mt-[60px]' : 'mt-[150px]'} w-full`}>
-                <h1 className={`font-bold text-white ${isSmallScreen ? 'text-[20px]' : 'text-[60px]'}`}>Shine More, Spend Less</h1>
+                <h1 className={`font-bold text-white ${isSmallScreen ? 'text-[25px] text-center' : 'text-[60px]'}`}>Shine More, Spend Less</h1>
                 <p className={`font-light text-white ${isSmallScreen ? 'text-sm' : 'text-md'} text-center`}
                 >Unlock exclusive deals on pampering and home care services in your city. </p>
                 <div className={`flex ${isSmallScreen ? 'flex-col w-[80%]' : 'flex-row w-[60%]'} items-center gap-2 mt-10`}>
-                    <div className={`${isSmallScreen ? 'w-[100%]' : 'w-[40%]'}`}>
+                    <div className={`${isSmallScreen ? 'w-[100%]' : 'w-[40%]'} flex items-center`}>
                         <input 
                             type="text"
-                            className="input h-11 pl-12 text-sm w-full"
+                            className={`input ${isSmallScreen ? 'h-[50px]' : 'h-[60px]'} pl-10 text-sm w-full`}
                             placeholder="Search business or service"
                         />
                         <Image
@@ -254,13 +269,13 @@ function Landing() {
                             alt="image"
                             width={20}
                             height={20}
-                            className="absolute mt-[-30px] ml-4"
+                            className="absolute ml-4"
                         />
                     </div>
-                    <div className={`${isSmallScreen ? 'w-[100%]' : 'w-[30%]'} flex flex-center items-center`}>
+                    <div className={`${isSmallScreen ? 'w-[100%]' : 'w-[30%]'} flex items-center`}>
                         <input 
                             type="text"
-                            className="input h-11 pl-10 text-sm w-full"
+                            className={`input ${isSmallScreen ? 'h-[50px]' : 'h-[60px]'} pl-10 text-sm w-full`}
                             placeholder="Where"
                         />
                         <Image
@@ -268,10 +283,10 @@ function Landing() {
                             alt="image"
                             width={15}
                             height={20}
-                            className="absolute ml-4 mt-1"
+                            className="absolute ml-4"
                         />
                     </div>
-                    <button className={`button text-sm pl-8 pr-8 pt-3 pb-3 ${isSmallScreen ? 'w-[100%]' : 'w-[30%]'} hover:bg-white hover:text-[#B39B77]`}>
+                    <button className={`button pl-8 pr-8 pt-3 text-md pb-3 ${isSmallScreen ? 'w-[100%] h-[50px]' : 'w-[30%] h-[60px]'} hover:bg-white hover:text-[#B39B77]`}>
                         Search
                     </button>
                 </div>
@@ -364,7 +379,7 @@ function Landing() {
         </section>
 
         <section className={`flex flex-col justify-center items-center mb-10`}>
-            <h1 className={`text-[#435944] font-bold ${isSmallScreen ? 'mt-[20px] text-[40px]' : 'mt-[60px] text-[60px]'}`}>Our Services</h1>
+            <h1 className={`text-[#435944] font-bold ${isSmallScreen ? 'mt-[20px] text-[30px]' : 'mt-[60px] text-[60px]'}`}>Our Services</h1>
             <div className="w-[85%] flex justify-self-center">
                 <Marquee>
                     {content2.map((image, index) => 
@@ -375,7 +390,7 @@ function Landing() {
                                 width={isSmallScreen ? 200 : 293}
                                 height={isSmallScreen ? 270 : 318}
                             />
-                            <p className="font-bold text-lg">{image.type}</p>
+                            <p className="font-semiBold text-lg">{image.type}</p>
                         </div>
                     )}
                 </Marquee>
@@ -383,15 +398,15 @@ function Landing() {
         </section>
 
         <section className={`flex flex-col ${isSmallScreen ? 'justify-start items-start' : 'justify-center items-center'} bg-[#F2F1F0] pb-10`}>
-            <h1 className={`text-[#435944] font-bold ${isSmallScreen ? "text-[30px] pl-4 pr-4 mt-[20px]" : "text-[50px] mt-[50px]"}`}>Treat Yourself Without Breaking the Bank.</h1>
+            <h1 className={`text-[#435944] font-bold ${isSmallScreen ? "text-[30px] pl-4 pr-4 mt-[20px]" : "text-[60px] mt-[50px]"}`}>Treat Yourself Without Breaking the Bank.</h1>
             <p className={`${isSmallScreen ? "text-justify pl-4 pr-4" : "w-[70%] text-center"} text-[#221E1F] font-light`}>{`Sparkles isn't just about saving money, it's about sparkling joy! We believe that everyone 
                 deserves a little luxury, without sacrificing their financial well-being. That's why we've built 
                 a platform that connects you with amazing deals on all your favourite lifestyle, beauty, and wellness 
                 services, as well as convenient home care solutions.`}
             </p>
-            <button onClick={() => scrollToSection(getStarted)} className={
-                `button pl-8 pr-8 text-xs h-7 hover:bg-white hover:border hover:border-[#B39B77]
-                hover:text-[#B39B77] pt-2 pb-6 mt-10 ml-4 mr-4`
+            <button className={
+                `button text-md h-[60px] hover:bg-white hover:border hover:border-[#B39B77]
+                hover:text-[#B39B77] mt-10 ${isSmallScreen ? 'ml-4 pl-[60px] pr-[60px]' : 'pl-[80px] pr-[80px]'}`
             }>
                 Get Started
             </button>
@@ -448,7 +463,7 @@ function Landing() {
                 <br />
                 <p className={`text-md ${isSmallScreen ? "mr-5" : "mr-20"} font-light`}>
                     {`Through the Sparkles Platform, we are able to create job and economic upliftment
-                        Booking on the Sparkles Platform help us achieve this goal. Book Today!`}
+                        Booking on the Sparkles Platform help us achieve this goal. Book Now!`}
                 </p>
             </div>
             <div className={`${isSmallScreen ? 'w-[100%] pr-4 pl-4 mt-20' : 'w-[50%] pr-20'}`}>
@@ -467,16 +482,16 @@ function Landing() {
             <p className={`${isSmallScreen ? 'text-[25px] w-[90%]' : 'text-[40px]'} text-[#435944] font-bold`}>
                 support our CAUSES
             </p>
-            <div className={`flex flex-row ${isSmallScreen ? 'gap-3' : 'gap-10'}`}>
+            <div className={`flex flex-row ${isSmallScreen ? 'gap-3 w-[90%]' : 'gap-10'}`}>
                 <button className={
-                    `bg-white font-light text-center text-[#B39B77] ${isSmallScreen ? 'pl-[2rem] pr-[2rem]' : 'pl-[5rem] pr-[5rem]'} text-sm border-[#B39B77]
-                    hover:font-medium pt-4 pb-4 mt-10 border rounded-[3rem]`
+                    `bg-white font-light text-center text-[#B39B77] ${isSmallScreen ? 'pl-[1.5rem] pr-[1.5rem]' : 'pl-[5rem] pr-[5rem]'} text-sm border-[#B39B77]
+                    hover:font-medium pt-4 pb-4 mt-10 border rounded-[20px]`
                 }>
                     Donate Items
                 </button>
                 <button className={
-                    `bg-[#B39B77] text-center text-white ${isSmallScreen ? 'pl-[2rem] pr-[2rem]' : 'pl-[5rem] pr-[5rem]'} text-sm
-                    hover:font-medium pt-4 pb-4 mt-10 border rounded-[3rem] font-light`
+                    `bg-[#B39B77] text-center text-white ${isSmallScreen ? 'pl-[1.5rem] pr-[1.5rem]' : 'pl-[5rem] pr-[5rem]'} text-sm
+                    hover:font-medium pt-4 pb-4 mt-10 border rounded-[20px] font-light`
                 }>
                     Donate Money
                 </button>
@@ -514,15 +529,15 @@ function Landing() {
                                 <span className="font-light text-[12px] text-left mb-2">
                                     {item.message}
                                 </span>
-                                <div className="flex flex-row gap-1 w-full justify-start items-center">
+                                <div className="flex flex-row gap-4 w-full justify-start items-center">
                                     <Image
                                         src={item.src}
                                         alt="image"
                                         width={60}
                                         height={60}
-                                        className="rounded-full m-5"
+                                        className="rounded-full mt-5 mb-5"
                                     />
-                                    <p className="font-light text-[12px]">{item.name}</p>
+                                    <p className="font-light text-[14px]">{item.name}</p>
                                 </div>
                                 
                             </div>
@@ -539,7 +554,7 @@ function Landing() {
                     mousewheel={true}
                     keyboard={true}
                     cssMode={true}
-                    navigation={true}
+                    navigation={isSmallScreen ? false : true}
                     modules={[Navigation, Mousewheel, Keyboard]}
                     className="w-[85%] h-[auto] mySwiper"
                 >
@@ -562,18 +577,20 @@ function Landing() {
                 </Swiper>
             </div>
 
-            <div className={`flex flex-col ${isSmallScreen ? 'mt-10 w-[100%] p-4 justify-start items-start pb-10' : 'mt-20 w-[65%] rounded-[2rem] p-8 justify-center items-center mb-20'} bg-[#435944]`} ref={getStarted}>
-                <p className={`${isSmallScreen ? 'text-[30px]' : 'text-[40px]'} text-[white] font-bold`}>
-                    Grow Your Business with Sparkles
-                </p>
-                <p className={`text-sm text-[white] font-light mb-10 ${isSmallScreen ? 'text-justify pr-10' : 'text-center w-[80%]'}`}>
-                    {`Are you a business owner in the lifestyle, beauty, wellness, or 
-                    home care industries? Do you dream of filling your appointment book, 
-                    attracting new customers, and watching your business sparkle with success? 
-                    Look no further than Sparkles!`}
-                </p>
-                <form className={`flex flex-col ${isSmallScreen ? 'w-[95%]' : 'w-[80%] gap-4'}`} onSubmit={handleSubmit}>
-                    <div className={`flex ${isSmallScreen ? 'flex-col gap-4 w-[95%] mb-4' : 'flex-row gap-8'} items-center`}>
+            <div className={`flex flex-col ${isSmallScreen ? 'mt-10 w-[100%] p-4 justify-center items-center pb-10' : 'mt-20 w-[65%] rounded-[2rem] p-8 justify-center items-center mb-20'} bg-[#435944]`} ref={getStarted}>
+                <div className={`flex flex-col justify-start items-start ${isSmallScreen && 'w-[90%]'}`}>
+                    <p className={`${isSmallScreen ? 'text-[30px]' : 'text-[40px]'} text-[white] font-bold`}>
+                        Grow Your Business with Sparkles
+                    </p>
+                    <p className={`text-sm text-[white] font-light mb-10 ${isSmallScreen ? 'text-justify pr-10' : 'text-center w-[80%]'}`}>
+                        {`Are you a business owner in the lifestyle, beauty, wellness, or 
+                        home care industries? Do you dream of filling your appointment book, 
+                        attracting new customers, and watching your business sparkle with success? 
+                        Look no further than Sparkles!`}
+                    </p>
+                </div>
+                <form className={`flex flex-col ${isSmallScreen ? 'w-[90%]' : 'w-[80%] gap-4'}`} onSubmit={handleSubmit}>
+                    <div className={`flex ${isSmallScreen ? 'flex-col gap-4 w-[100%] mb-4' : 'flex-row gap-8'} items-center`}>
                         <div className={`flex flex-col justify-start items-start ${isSmallScreen ? 'w-[100%]' : 'w-[50%]'}`}>
                             <p className="text-sm text-[white] font-light">Full Name/Business Name</p>
                             <input 
@@ -598,7 +615,7 @@ function Landing() {
                         </div>
                     </div>
 
-                    <div className={`flex ${isSmallScreen ? 'flex-col gap-4 w-[95%] mb-4' : 'flex-row gap-8'} items-center`}>
+                    <div className={`flex ${isSmallScreen ? 'flex-col gap-4 w-[100%] mb-4' : 'flex-row gap-8'} items-center`}>
                         <div className={`flex flex-col justify-start items-start ${isSmallScreen ? 'w-[100%]' : 'w-[50%]'}`}>
                             <p className="text-sm text-[white] font-light">Email</p>
                             <input 
@@ -629,7 +646,7 @@ function Landing() {
                         </div>
                     </div>
 
-                    <div className={`flex ${isSmallScreen ? 'flex-col gap-4 w-[95%]' : 'flex-row gap-8'} items-center`}>
+                    <div className={`flex ${isSmallScreen ? 'flex-col gap-4 w-[100%]' : 'flex-row gap-8'} items-center`}>
                         <div className={`flex flex-col justify-start items-start ${isSmallScreen ? 'w-[100%]' : 'w-[50%]'}`}>
                             <p className="text-sm text-[white] font-light">Mode of Operation</p>
                             <Select
@@ -669,7 +686,7 @@ function Landing() {
                     <button 
                         type='submit' 
                         disabled={isLoading}
-                        className={`button w-full mt-4 pt-2 pb-2 ${isLoading ? 'hover:text-white hover:bg-[#B39B77]' : 'hover:text-[#B39B77] hover:bg-white'} text-md ${isSmallScreen && 'w-[95%]'}`}
+                        className={`button w-full h-[50px] mt-4 pt-2 pb-2 ${isLoading ? 'hover:text-white hover:bg-[#B39B77]' : 'hover:text-[#B39B77] hover:bg-white'} text-md ${isSmallScreen && 'w-[95%]'}`}
                     >
                         {isLoading ? "Submitting..." : "Join Waitlist"}
                     </button>
@@ -734,7 +751,7 @@ function Landing() {
                </div>
             </div>
             
-            <span className="font-light text-md text-white mt-[2rem]">
+            <span className="font-light text-sm text-white mt-[2rem]">
                 Copyright {new Date().getFullYear()}
             </span>
         </section>
