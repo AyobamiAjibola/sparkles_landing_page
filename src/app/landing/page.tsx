@@ -578,7 +578,7 @@ function Landing() {
             </div>
 
             <div className={`flex flex-col ${isSmallScreen ? 'mt-10 w-[100%] p-4 justify-center items-center pb-10' : 'mt-20 w-[65%] rounded-[2rem] p-8 justify-center items-center mb-20'} bg-[#435944]`} ref={getStarted}>
-                <div className={`flex flex-col justify-start items-start ${isSmallScreen && 'w-[90%]'}`}>
+                <div className={`flex flex-col ${isSmallScreen ? 'w-[90%] justify-start items-start' : 'w-[100%] justify-center items-center' }`}>
                     <p className={`${isSmallScreen ? 'text-[30px]' : 'text-[40px]'} text-[white] font-bold`}>
                         Grow Your Business with Sparkles
                     </p>
