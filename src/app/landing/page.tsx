@@ -20,7 +20,7 @@ import { Dialog } from "@mui/material";
 import { stateLga } from "@/constant/state";
 import Select from "react-select";
 import { customStyles } from "@/constant/customStyles";
-import ImageSlider from "@/component/Slider";
+import {ImageSlider, ImageSlider2} from "@/component/Slider";
 
 const type = [
     {label: "Barber", value: "Barber"},
@@ -34,7 +34,9 @@ const type = [
     {label: "Hotel", value: "Hotel"},
     {label: "Car Rental", value: "Car Rental"},
     {label: "Fitness", value: "Fitness"},
-    {label: "Pet Services", value: "Pet Services"}
+    {label: "Pet Services", value: "Pet Services"},
+    {label: "Dental & Orthodontics", value: "Dental & Orthodontics"},
+    {label: "Auto Care", value: "Auto Care"}
 ];
 
 const modeOfOperation = [
@@ -202,13 +204,7 @@ function Landing() {
   return (
     <main>
         {!isSmallScreen && (<ImageSlider/>)}
-        {isSmallScreen && (<img
-            src='images/img1.png'
-            style={{
-                width: windowWidth,
-                height: '570px'
-            }}
-        />)}
+        {isSmallScreen && (<ImageSlider2/>)}
         <section 
             className={`absolute top-0 left-0 z-[0] flex flex-col flex-center items-center ${isSmallScreen ? 'pl-5 pr-5 pt-5' : 'pl-[80px] pr-[80px] pt-10'} w-[100%]`}>
             <div className="flex justify-between w-full">
