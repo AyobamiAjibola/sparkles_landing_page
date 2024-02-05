@@ -302,9 +302,9 @@ function Landing() {
                                             height={isSmallScreen ? 20 : 30}
                                         />
                                     </div>
-                                   {!isSmallScreen && (<p className="font-light text-xs text-white">
+                                   <p className="font-light text-xs text-white">
                                         {image.title}
-                                    </p>)}
+                                    </p>
                                 </div>
                             ))}
                         </Marquee>
