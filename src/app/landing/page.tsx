@@ -31,7 +31,7 @@ const type = [
     {label: "Hair stylist", value: "Hair stylist"},
     {label: "Tooth whitening", value: "Tooth whitening"},
     {label: "House Cleaning", value: "House Cleaning"},
-    {label: "Hotel", value: "Hotel"},
+    {label: "Adventure & Experience", value: "Adventure & Experience"},
     {label: "Car Rental", value: "Car Rental"},
     {label: "Fitness", value: "Fitness"},
     {label: "Pet Services", value: "Pet Services"},
